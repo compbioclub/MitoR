@@ -1,6 +1,7 @@
 # Ignore Python cache and compiled files
 __pycache__/
 *.py[cod]
+*.so
 
 # Ignore virtual environments
 venv/
@@ -21,3 +22,12 @@ venv/
 src/main.py
 
 output
+
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+*.ipynb
+
+tests/

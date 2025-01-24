@@ -1,12 +1,14 @@
-# MITOR: predicting T-cell mitochondria hijacking from tumor single-cell RNA sequencing data
-
-**MITOR** is a Python tool for single-cell RNA-seq data analysis, providing an integrated pipeline for data initialization, enMT profile prediction, cell type prediction, and result visualization.
-
-
+# MitoR: Predicting T-cell Mitochondria Hijacking from Tumor Single-cell RNA Sequencing Data
 
 ## Overview
 
-![Figure1](D:\MITOR_standard\Figure1.png)
+![Figure1](./figure/Figure1.png)
+
+The schematic overview of MitoR.
+
++ A. The Poisson-Gamma model for fitting profiles of T cell and cancer cell endogenous mitochondria (enMT). 
++ B. The Poisson-Gamma mixture model for predicting each cell's T cell and cancer cell fraction proportions. 
++ C. Four strategies with specific cutoffs to identify hijacker and non-hijacker cancer cells.
 
 ## 📥 Installation
 
@@ -28,8 +30,8 @@ The following is an example of how to use MITOR in a complete workflow:
 from mitor import init_pipeline, run_enMT_profile, run_predict, plot_result, plot_info
 
 # File paths
-adata_path = "demo/scRNAseq_bench2.h5ad"
-mixed_cell_names_path = "demo/mixed_cell_names.csv"
+adata_path = "./demo/scRNAseq_bench2.h5ad"
+mixed_cell_names_path = "./demo/mixed_cell_names.csv"
 
 # Initialize pipeline
 predictor_RNA, ref_adata_dict, mixed_cell_list, adata_RNA = init_pipeline(adata_path, mixed_cell_names_path)
@@ -86,7 +88,7 @@ fractions = get_fraction(predictor_RNA)
 
 MITOR provides built-in visualization tools:
 
-```
+```python
 from mitor.pipeline import plot_result, plot_info
 
 # Visualization of AUROC and AUPRC of Prob-base and Rank-base

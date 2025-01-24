@@ -61,6 +61,7 @@ def get_result(predictor_RNA,mixture_labels,feature='Prob'):
     file_path = os.path.join("output", f'{feature.lower()}_performance_metrics.csv')
     result.to_csv(file_path, index=False)
     print(f"[MITOR] result saved as output/{feature.lower()}_performance_metrics.csv.csv.")
+    return result
 
 
 def get_fraction(predictor_RNA):
@@ -68,6 +69,7 @@ def get_fraction(predictor_RNA):
     os.makedirs("output", exist_ok=True)
     df_F.to_csv("output/pred_F.csv")
     print("[MITOR] Fraction prediction saved as output/pred_F.csv.")
+    return df_F
 
 def plot_result(predictor_RNA, mixture_labels):
 

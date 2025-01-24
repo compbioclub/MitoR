@@ -55,7 +55,8 @@ class Deconvolutor(object):
         F = row_scaled_F
         self.raw_F = pd.DataFrame(raw_F.T, columns=self.types, index=adata.obs_names)
         self.F = pd.DataFrame(F.T, columns=self.types, index=adata.obs_names)
-        
+
+        adata = adata.copy()
         adata.uns['raw_F'] = self.raw_F
         adata.uns['F'] = self.F
 
