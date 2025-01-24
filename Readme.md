@@ -15,7 +15,7 @@ The schematic overview of MitoR.
 **From GitHub (recommended for the latest version)**
 
 ```
-pip install git+https://github.com/<username>/<repo>.git
+pip install git+https://github.com/compbioclub/MitoR.git@dev
 ```
 
 
