@@ -1,6 +1,6 @@
 # MITOR: predicting T-cell mitochondria hijacking from tumor single-cell RNA sequencing data
 
-
+**MITOR** is a Python tool for single-cell RNA-seq data analysis, providing an integrated pipeline for data initialization, enMT profile prediction, cell type prediction, and result visualization.
 
 
 
@@ -10,7 +10,11 @@
 
 ## 📥 Installation
 
+**From GitHub (recommended for the latest version)**
 
+```
+pip install git+https://github.com/<username>/<repo>.git
+```
 
 
 
@@ -21,7 +25,7 @@
 The following is an example of how to use MITOR in a complete workflow:
 
 ```python
-from mitor.pipeline import init_pipeline, run_enMT_profile, run_predict, plot_result, plot_info
+from mitor import init_pipeline, run_enMT_profile, run_predict, plot_result, plot_info
 
 # File paths
 adata_path = "demo/scRNAseq_bench2.h5ad"
@@ -40,11 +44,18 @@ print("✅ MITOR pipeline completed!")
 
 ```
 
+#### 📌Explanation
 
+1. **`init_pipeline(adata_path, mixed_cell_names_path)`**
+   Loads reference data and initializes single-cell dataset (`adata_RNA`) , reference data dict (`ref_adata_dict`) and the predictor model (`predictor_RNA`).
+2. **`run_enMT_profile(predictor_RNA, ref_adata_dict)`**
+   Runs the enMT-based profile prediction using the reference data.
+3. **`run_predict(predictor_RNA, adata_RNA, mixed_cell_list)`**
+   Predicts cell types for the mixed samples.
 
 ### 2️⃣ Obtaining Prediction Results
 
-After running the pipeline, you can extract key prediction results:
+After running the main pipeline steps, you can extract key prediction results using **`get_result`** and **`get_fraction`**:
 
 ```python
 from mitor.pipeline import get_result, get_fraction
