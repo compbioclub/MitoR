@@ -60,7 +60,7 @@ print("✅ MITOR pipeline completed!")
 After running the main pipeline steps, you can extract key prediction results using **`get_result`** and **`get_fraction`**:
 
 ```python
-from mitor.pipeline import get_result, get_fraction
+from mitor import get_result, get_fraction
 
 # Extract predicted labels for mixed cells
 mixture_labels = adata_RNA[adata_RNA.obs["cell_name"].isin(mixed_cell_list)].obs.MTtransfer.apply(lambda x: x.lower())
@@ -89,7 +89,7 @@ fractions = get_fraction(predictor_RNA)
 MITOR provides built-in visualization tools:
 
 ```python
-from mitor.pipeline import plot_result, plot_info
+from mitor import plot_result, plot_info
 
 # Visualization of AUROC and AUPRC of Prob-base and Rank-base
 plot_result(predictor_RNA, mixture_labels)
