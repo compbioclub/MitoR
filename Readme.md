@@ -4,11 +4,16 @@
 
 ![Figure1](./figure/Figure1.png)
 
-The schematic overview of MitoR.
+### The schematic overview of MitoR.
 
 + A. The Poisson-Gamma model for fitting profiles of T cell and cancer cell endogenous mitochondria (enMT). 
 + B. The Poisson-Gamma mixture model for predicting each cell's T cell and cancer cell fraction proportions. 
 + C. Four strategies with specific cutoffs to identify hijacker and non-hijacker cancer cells.
+
+## 📑 Citation
+
+Jiang, A.; Lyu, C.; Zhao, Y. Predicting T Cell Mitochondria Hijacking from Tumor Single-Cell RNA Sequencing Data with MitoR. Mathematics 2025, 13, 673. https://doi.org/10.3390/math13040673
+
 
 ## 📥 Installation
 
@@ -17,7 +22,6 @@ The schematic overview of MitoR.
 ```
 pip install git+https://github.com/compbioclub/MitoR.git
 ```
-
 
 
 ## 🚀 Quick Start
